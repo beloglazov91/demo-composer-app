@@ -1,18 +1,6 @@
 {
 "integrations": {
-  "project_management_system": {
-      "credential": "jira",
-      "project": "AD",
-      "tracker": "Task",
-      "priority": "Low",
-      "task_status_to_ag_mapping": {
-        "In Progress": "execute_update",
-        "Done": "closed"
-      },
-      "task_status_from_ag_mapping": {
-        "closed": "Done"
-      }
-    }
+
   },
   "update_behavior": {
         "source_branch": "dev-demo",
