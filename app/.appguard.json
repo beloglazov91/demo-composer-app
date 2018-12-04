@@ -12,6 +12,9 @@
       "task_status_from_ag_mapping": {
         "closed": "Done"
       }
+    },
+    "collaboration_tool": {
+      "credential": "slack-default"
     }
   },
   "update_behavior": {
@@ -21,6 +24,14 @@
         "skip_manual_testing": "no"
     },
   "events": {
- 
+    "new_updates_available": [
+      {
+        "sendmessage": {
+          "title": "New updates available for \"[project:name]\"",
+          "message": "We've found the new updates for your project.\n\nThe packages:\n[task:packages|, ][package:name]: [package:current-version] → [package:new-version][/task:packages]",
+          "color": "#998877"
+        }
+      }
+    ]
   }
 }
