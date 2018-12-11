@@ -1,0 +1,39 @@
+{
+"integrations": {
+    "project_management_system": {
+      "credential": "jira",
+      "project": "AD",
+      "tracker": "Task",
+      "priority": "Low",
+      "task_status_to_ag_mapping": {
+        "In Progress": "execute_update",
+        "Done": "closed"
+      },
+      "task_status_from_ag_mapping": {
+        "closed": "Done"
+      }
+    },
+    "collaboration_tool": {
+      "credential": "slack-default"
+    }
+  },
+  "update_behavior": {
+        "source_branch": "dev-demo",
+        "destination_branch": "dev/updates/[task:id]",
+        "auto_start_updates": "no",
+        "skip_manual_testing": "no"
+    },
+  "events": {
+    "new_updates_available": [
+      {
+        "sendmail": {
+          "emails": "alexey.beloglazov@app-guard.io",
+          "subject": "New updates available for \"[project:name]\"",
+          "message": "[snippet:event.new-updates-available]",
+          "cc": "",
+          "bcc": ""
+        }
+      }
+    ]
+  }
+}
