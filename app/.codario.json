@@ -29,7 +29,7 @@
         "sendmail": {
           "emails": "alexey.beloglazov@app-guard.io",
           "subject": "New updates available for \"[project:name]\"",
-          "message": "[snippet:event.new-updates-available]",
+          "message": "[snippet:event.new-updates-available(a:b)]",
           "cc": "",
           "bcc": ""
         }
