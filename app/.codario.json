@@ -14,7 +14,7 @@
             "merge_branch": {
               "source": "stage/updates/[task:id]",
               "delete_after_merge": "no",
-              "target": ["stage/updates/[task:id]/merged"]
+              "target": ["stage/updates/[task:id]-merged"]
             }
         }
     ]
