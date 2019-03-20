@@ -1,22 +1,23 @@
 {
-"integrations": {
-  
+  "integrations": {
   },
   "update_behavior": {
-        "source_branch": "stage-demo",
-        "destination_branch": "stage/updates/[task:id]",
-        "auto_start_updates": "no",
-        "skip_manual_testing": "no"
-    },
+    "auto_start_updates": "no",
+    "skip_manual_testing": "no",
+    "source_branch": "stage/updates/26-merged",
+    "destination_branch": "updates/[task:id]"
+  },
   "events": {
-    "ready_to_test": [
-       {
-            "merge_branch": {
-              "source": "stage/updates/[task:id]",
-              "delete_after_merge": "no",
-              "target": ["stage/updates/[task:id]-merged"]
-            }
+    "test_passed": [
+      {
+        "merge_branch": {
+          "source": "updates/[task:id]",
+          "delete_after_merge": "yes",
+          "target": [
+            "stage/updates/26-merged"
+          ]
         }
+      }
     ]
   }
 }
