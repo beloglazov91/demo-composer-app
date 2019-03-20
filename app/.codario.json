@@ -4,7 +4,7 @@
   "update_behavior": {
     "auto_start_updates": "no",
     "skip_manual_testing": "no",
-    "source_branch": "stage/updates/26-merged",
+    "source_branch": "stage/updates/26-merged22",
     "destination_branch": "updates/[task:id]"
   },
   "events": {
