@@ -4,7 +4,7 @@
   "update_behavior": {
     "auto_start_updates": "no",
     "skip_manual_testing": "no",
-    "source_branch": "stage/updates/26-mergeedc2x2",
+    "source_branch": "stage/updates/26-mergeedc2xx2",
     "destination_branch": "updates/[task:id]"
   },
   "events": {
