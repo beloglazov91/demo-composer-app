@@ -2,7 +2,7 @@
   "integrations": {
   },
   "update_behavior": {
-    "auto_start_updates": "no",
+    "auto_start_updates": "yes",
     "skip_manual_testing": "no",
     "source_branch": "dev/updates/10000036",
     "destination_branch": "updates/[task:id]"
