@@ -2,7 +2,7 @@
   "integrations": {
   },
   "update_behavior": {
-    "auto_start_updates": "no",
+    "auto_start_updates": "yes",
     "skip_manual_testing": "no",
     "source_branch": "dev-demo",
     "destination_branch": "updates/[task:id]"
@@ -14,7 +14,7 @@
           "source": "updates/[task:id]",
           "delete_after_merge": "yes",
           "target": [
-            "dev-demo"
+            "dev/updates/10000036"
           ]
         }
       }
