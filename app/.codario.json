@@ -5,7 +5,9 @@
     "auto_start_updates": "no",
     "skip_manual_testing": "no",
     "source_branch": "dev/updates/10000038",
-    "destination_branch": "updates/[task:id]"
+    "destination_branch": "updates/[task:id]",
+    "handle_packages": "prod_only",
+    "create_tasks_for": "contains_vulnerable_packages"
   },
   "events": {
     "test_passed": [
