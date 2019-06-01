@@ -7,7 +7,7 @@
     "source_branch": "dev/updates/10000038",
     "destination_branch": "updates/[task:id]",
     "handle_packages": "prod_only",
-    "create_tasks_for": "contains_vulnerable_packages"
+    "create_tasks_for": "all_packages"
   },
   "events": {
     "test_passed": [
