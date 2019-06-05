@@ -21,6 +21,17 @@
     "create_tasks_for": "all_packages"
   },
   "events": {
+      "new_updates_available": [
+      {
+        "sendmail": {
+          "emails": "[user:email]",
+          "subject": "New updates are available for [project:name]",
+          "message": "[snippet:workflow.event.new-updates-available]",
+          "cc": "",
+          "bcc": ""
+        }
+      }
+    ],
     "test_passed": [
       {
         "merge_branch": {
