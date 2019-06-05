@@ -1,5 +1,13 @@
 {
   "integrations": {
+      "continuous_delivery": [
+      {
+        "credential": "ssh1"
+      },
+      {
+        "credential": "ssh2"
+      }
+    ]
   },
   "update_behavior": {
     "auto_start_updates": "no",
