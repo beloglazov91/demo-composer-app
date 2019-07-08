@@ -10,6 +10,28 @@
     "create_tasks_for": "all_packages"
   },
   "events": {
+    "new_updates_available": [
+      {
+        "sendmail": {
+          "emails": "[user:email]",
+          "subject": "111222333New updates are available for [project:name]",
+          "message": "[snippet:workflow.event.new-updates-available]",
+          "cc": "",
+          "bcc": ""
+        }
+      }
+    ],
+    "ready_to_test": [
+      {
+        "sendmail": {
+          "emails": "[user:email]",
+          "subject": "A task for [project:name] is ready for testing",
+          "message": "[snippet:workflow.event.ready-to-test]",
+          "cc": "",
+          "bcc": ""
+        }
+      }
+    ],
     "test_passed": [
       {
         "merge_branch": {
@@ -18,6 +40,28 @@
           "target": [
             "dev/updates/10000040"
           ]
+        }
+      }
+    ],
+    "failed": [
+      {
+        "sendmail": {
+          "emails": "[user:email]",
+          "subject": "A task error occurred in [project:name]",
+          "message": "[snippet:workflow.event.failed]",
+          "cc": "",
+          "bcc": ""
+        }
+      }
+    ],
+    "patch_cant_be_applied": [
+      {
+        "sendmail": {
+          "emails": "[user:email]",
+          "subject": "A task error occurred in [project:name]",
+          "message": "[snippet:workflow.event.failed]",
+          "cc": "",
+          "bcc": ""
         }
       }
     ]
