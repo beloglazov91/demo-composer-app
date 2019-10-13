@@ -61,5 +61,8 @@
         }
       }
     ]
+  },
+  "extra": {
+      "use_no_scripts_mode": "yes"
   }
 }
