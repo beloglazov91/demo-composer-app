@@ -11,7 +11,7 @@
       },
       "task_status_from_codario_mapping": {
         "closed": "Done",
-        "new_updates_available": "No approved"
+        "new_updates_available": "Not Approved"
       }
     }
   },
