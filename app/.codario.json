@@ -1,16 +1,17 @@
 {
 "integrations": {
   "project_management_system": {
-      "credential": "jira",
-      "project": "AD",
-      "tracker": "Task",
-      "priority": "Low",
+      "credential": "asana-default",
+      "project": "1145113180529756",
+      "tracker": "default",
+      "priority": "default",
       "task_status_to_codario_mapping": {
         "In Progress": "execute_update",
         "Done": "closed"
       },
       "task_status_from_codario_mapping": {
-        "closed": "Done"
+        "closed": "Done",
+        "new_updates_available": "No approved"
       }
     }
   },
