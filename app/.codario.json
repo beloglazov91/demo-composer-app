@@ -6,7 +6,7 @@
       "tracker": "default",
       "priority": "default",
       "task_status_to_codario_mapping": {
-        "In Progress": "execute_update",
+        "In progress": "execute_update",
         "Done": "closed"
       },
       "task_status_from_codario_mapping": {
