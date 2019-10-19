@@ -1,6 +1,23 @@
 {
 "integrations": {
- 
+ "project_management_system": {
+      "credential": "asana-default",
+      "project": "1145669821616705",
+      "tracker": "default",
+      "priority": "default",
+      "task_status_to_codario_mapping": {
+        "In Progress": "execute_update",
+        "Test Passed": "test_passed",
+        "Test Failed": "test_failed",
+        "Done": "closed"
+      },
+      "task_status_from_codario_mapping": {
+        "new_updates_available": "To Do",
+        "test_passed": "Test Passed",
+        "test_failed": "Test Failed",
+        "closed": "Done"
+      }
+    }
   },
   "update_behavior": {
         "source_branch": "stage-demo",
