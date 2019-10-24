@@ -9,7 +9,7 @@
     "auto_start_updates": "no",
     "skip_manual_testing": "no",
     "source_branch": "dev/updates/10000036",
-    "destination_branch": "updates/[task:id]",
+    "destination_branch": "updates/[task:id]/33",
     "handle_packages": "dev_and_prod",
     "create_tasks_for": "all_packages"
   },
