@@ -1,21 +1,30 @@
 {
   "integrations": {
+    "git_provider": {
+      "credential": "user:github",
+      "target": "dev-demo"
+    }
   },
   "update_behavior": {
-    "auto_start_updates": "yes",
+    "auto_start_updates": "no",
     "skip_manual_testing": "no",
     "source_branch": "dev-demo",
-    "destination_branch": "updates/[task:id]"
+    "destination_branch": "updates/[task:id]",
+    "handle_packages": "dev_and_prod",
+    "create_tasks_for": "all_packages"
   },
   "events": {
     "test_passed": [
       {
-        "merge_branch": {
-          "source": "updates/[task:id]",
-          "delete_after_merge": "yes",
-          "target": [
-            "dev/updates/10000036"
-          ]
+        "accept_pull_request": {
+          "delete_source_branch": "yes"
+        }
+      }
+    ],
+    "test_failed": [
+      {
+        "decline_pull_request": {
+          "delete_source_branch": "no"
         }
       }
     ]
