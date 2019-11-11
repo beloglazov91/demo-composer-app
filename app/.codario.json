@@ -1,5 +1,9 @@
 {
   "integrations": {
+    "git_provider": {
+      "credential": "user:github",
+      "target": "dev/updates/10000038"
+    }
   },
   "update_behavior": {
     "auto_start_updates": "no",
@@ -34,12 +38,15 @@
     ],
     "test_passed": [
       {
-        "merge_branch": {
-          "source": "updates/[task:id]",
-          "delete_after_merge": "yes",
-          "target": [
-            "dev/updates/10000038"
-          ]
+        "accept_pull_request": {
+          "delete_source_branch": "yes"
+        }
+      }
+    ],
+    "test_failed": [
+      {
+        "decline_pull_request": {
+          "delete_source_branch": "no"
         }
       }
     ],
