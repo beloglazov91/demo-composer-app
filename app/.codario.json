@@ -28,46 +28,5 @@
         }
       }
     ]
-  },
-  "extra": {
-    "private_data": {
-      "http-basic": [
-        {
-          "host": "registry.composer.org",
-          "username": "username",
-          "password": "password"
-        },
-        {
-          "host": "registry.composer.org",
-          "username": "username",
-          "password": "password"
-        }
-      ],
-      "bitbucket-oauth": [
-        {
-          "host": "bitbucket.org",
-          "consumer-key": "key",
-          "consumer-secret": "secret"
-        }
-      ],
-      "gitlab-token": [
-        {
-          "host": "gitlab.com",
-          "token": "privatetoken"
-        }
-      ],
-      "gitlab-oauth": [
-        {
-          "host": "gitlab.com",
-          "token": "oauthtoken"
-        }
-      ],
-      "github-oauth": [
-        {
-          "host": "github.com",
-          "token": "oauthtoken"
-        }
-      ]
-    }
   }
 }
