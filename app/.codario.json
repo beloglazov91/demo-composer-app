@@ -1,5 +1,9 @@
 {
   "integrations": {
+    "git_provider": {
+      "credential": "user:github",
+      "target": "stage/updates/25"
+    }
   },
   "update_behavior": {
     "auto_start_updates": "no",
@@ -7,7 +11,7 @@
     "source_branch": "stage/updates/25",
     "destination_branch": "updates/[task:id]",
     "handle_packages": "dev_and_prod",
-    "create_tasks_for": "contains_vulnerable_packages"
+    "create_tasks_for": "all_packages"
   },
   "events": {
     "new_updates_available": [
@@ -34,27 +38,19 @@
     ],
     "test_passed": [
       {
-        "merge_branch": {
-          "source": "updates/[task:id]",
-          "delete_after_merge": "yes",
-          "target": [
-            "stage/updates/25"
-          ]
+        "accept_pull_request": {
+          "delete_source_branch": "yes"
+        }
+      }
+    ],
+    "test_failed": [
+      {
+        "decline_pull_request": {
+          "delete_source_branch": "no"
         }
       }
     ],
     "failed": [
-      {
-        "sendmail": {
-          "emails": "[user:email]",
-          "subject": "A task error occurred in [project:name]",
-          "message": "[snippet:workflow.event.failed]",
-          "cc": "",
-          "bcc": ""
-        }
-      }
-    ],
-    "patch_cant_be_applied": [
       {
         "sendmail": {
           "emails": "[user:email]",
