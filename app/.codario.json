@@ -18,7 +18,7 @@
       {
         "sendmail": {
           "emails": "[user:email]",
-          "subject": "New updates are available for [project:name]CUSROMFUCKINGTEXT!!!!!!",
+          "subject": "New updates are available for [project:name]",
           "message": "[snippet:workflow.event.new-updates-available]",
           "cc": "",
           "bcc": ""
