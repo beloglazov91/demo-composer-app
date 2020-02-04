@@ -2,18 +2,31 @@
   "integrations": {
     "git_provider": {
       "credential": "user:github",
-      "target": "drupal-composer-1222"
+      "target": "stage/updates/26-merged"
     }
   },
   "update_behavior": {
     "auto_start_updates": "no",
     "skip_manual_testing": "no",
-    "source_branch": "drupal-composer-1",
+    "source_branch": "stage/updates/26-merged",
     "destination_branch": "updates/[task:id]",
     "handle_packages": "dev_and_prod",
     "create_tasks_for": "all_packages"
   },
   "events": {
-    
+    "test_passed": [
+      {
+        "accept_pull_request": {
+          "delete_source_branch": "yes"
+        }
+      }
+    ],
+    "test_failed": [
+      {
+        "decline_pull_request": {
+          "delete_source_branch": "no"
+        }
+      }
+    ]
   }
 }
