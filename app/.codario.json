@@ -1,9 +1,5 @@
 {
   "integrations": {
-    "git_provider": {
-      "credential": "user:github",
-      "target": "stage/updates/26-merged"
-    }
   },
   "update_behavior": {
     "auto_start_updates": "no",
@@ -16,15 +12,12 @@
   "events": {
     "test_passed": [
       {
-        "accept_pull_request": {
-          "delete_source_branch": "yes"
-        }
-      }
-    ],
-    "test_failed": [
-      {
-        "decline_pull_request": {
-          "delete_source_branch": "no"
+        "merge_branch": {
+          "source": "updates/[task:id]",
+          "delete_after_merge": "yes",
+          "target": [
+            "stage/updates/26-merged"
+          ]
         }
       }
     ]
