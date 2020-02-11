@@ -1,22 +1,32 @@
 {
-"integrations": {
-  
+  "integrations": {
+    "git_provider": {
+      "credential": "user:github",
+      "target": "stage/updates/27"
+    }
   },
   "update_behavior": {
-        "source_branch": "stage-demo",
-        "destination_branch": "stage/updates/[task:id]",
-        "auto_start_updates": "no",
-        "skip_manual_testing": "no"
-    },
+    "auto_start_updates": "no",
+    "skip_manual_testing": "no",
+    "source_branch": "stage/updates/27",
+    "destination_branch": "updates/[task:id]",
+    "handle_packages": "dev_and_prod",
+    "create_tasks_for": "all_packages"
+  },
   "events": {
-    "ready_to_test": [
-       {
-            "merge_branch": {
-              "source": "stage/updates/[task:id]",
-              "delete_after_merge": "no",
-              "target": ["stage-updates"]
-            }
+    "test_passed": [
+      {
+        "accept_pull_request": {
+          "delete_source_branch": "yes"
         }
+      }
+    ],
+    "test_failed": [
+      {
+        "decline_pull_request": {
+          "delete_source_branch": "no"
+        }
+      }
     ]
   }
 }
