@@ -1,22 +1,65 @@
 {
-"integrations": {
-  
+  "integrations": {
+    "git_provider": {
+      "credential": "user:github",
+      "target": "stage/updates/26"
+    }
   },
   "update_behavior": {
-        "source_branch": "stage-demo",
-        "destination_branch": "stage/updates/[task:id]",
-        "auto_start_updates": "no",
-        "skip_manual_testing": "no"
-    },
+    "auto_start_updates": "no",
+    "skip_manual_testing": "no",
+    "source_branch": "stage/updates/26",
+    "destination_branch": "updates/[task:id]",
+    "handle_packages": "dev_and_prod",
+    "create_tasks_for": "all_packages"
+  },
   "events": {
-    "ready_to_test": [
-       {
-            "merge_branch": {
-              "source": "stage/updates/[task:id]",
-              "delete_after_merge": "no",
-              "target": ["stage/updates/[task:id]-merged"]
-            }
+    "new_updates_available": [
+      {
+        "sendmail": {
+          "emails": "[user:email]",
+          "subject": "New updates are available for [project:name]",
+          "message": "[snippet:workflow.event.new-updates-available]",
+          "cc": "",
+          "bcc": ""
         }
+      }
+    ],
+    "ready_to_test": [
+      {
+        "sendmail": {
+          "emails": "[user:email]",
+          "subject": "A task for [project:name] is ready for testing",
+          "message": "[snippet:workflow.event.ready-to-test]",
+          "cc": "",
+          "bcc": ""
+        }
+      }
+    ],
+    "test_passed": [
+      {
+        "accept_pull_request": {
+          "delete_source_branch": "yes"
+        }
+      }
+    ],
+    "test_failed": [
+      {
+        "decline_pull_request": {
+          "delete_source_branch": "no"
+        }
+      }
+    ],
+    "failed": [
+      {
+        "sendmail": {
+          "emails": "[user:email]",
+          "subject": "A task error occurred in [project:name]",
+          "message": "[snippet:workflow.event.failed]",
+          "cc": "",
+          "bcc": ""
+        }
+      }
     ]
   }
 }
