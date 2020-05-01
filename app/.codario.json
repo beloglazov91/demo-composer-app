@@ -2,14 +2,14 @@
     "integrations": {
         "git_provider": {
             "credential": "github-general",
-            "target": "stage\/updates\/26"
+            "target": "stage/updates/26"
         }
     },
     "update_behavior": {
         "auto_start_updates": "no",
         "skip_manual_testing": "no",
-        "source_branch": "stage\/updates\/26",
-        "destination_branch": "updates\/[task:id]",
+        "source_branch": "stage/updates/26",
+        "destination_branch": "updates/[task:id]",
         "handle_packages": "dev_and_prod",
         "create_tasks_for": "all_packages"
     },
