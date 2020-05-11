@@ -16,15 +16,21 @@
     "events": {
         "test_passed": [
             {
-                "accept_pull_request": {
-                    "delete_source_branch": "yes"
+                "sendmail": {
+                  "emails": "test@mail-composer.com,test2@mail-composer.com",
+                  "subject": "Test subject - Composer Project",
+                  "message": "Test message - Composer Project",
+                  "cc": "",
+                  "bcc": "",
+                  "get_notification_for": "all_packages"
                 }
-            }
+              }
         ],
         "test_failed": [
             {
                 "decline_pull_request": {
                     "delete_source_branch": "no"
+                    
                 }
             }
         ]
