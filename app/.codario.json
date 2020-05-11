@@ -22,7 +22,7 @@
                   "message": "Test message - Composer Project",
                   "cc": "",
                   "bcc": "",
-                  "get_notification_for": "all_packages"
+                  "get_notification_for": "contains_vulnerable_packages"
                 }
               }
         ],
