@@ -16,13 +16,8 @@
     "events": {
         "test_passed": [
             {
-                "sendmail": {
-                    "emails": "test@mail-composer.com,test2@mail-composer.com",
-                    "subject": "Test subject - Composer Project",
-                    "message": "Test message - Composer Project",
-                    "cc": "",
-                    "bcc": "",
-                    "only_when": "task:contains_vulnerable_packages"
+                "accept_pull_request": {
+                    "delete_source_branch": "yes"
                 }
             }
         ],
