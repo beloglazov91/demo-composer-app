@@ -6,7 +6,7 @@
         }
     },
     "update_behavior": {
-        "auto_start_updates": "no",
+        "auto_start_updates": "auto_for_vulnerable",
         "skip_manual_testing": "no",
         "source_branch": "stage/updates/26",
         "destination_branch": "updates/[task:id]",
