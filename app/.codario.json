@@ -19,7 +19,7 @@
         "auto_start_updates": "no",
         "skip_manual_testing": "no",
         "source_branch": "master",
-        "destination_branch": "updates/[task:id]/[task:external-issue-id]",
+        "destination_branch": "updates/[task:id]/[task:external-issue-id0]",
         "handle_packages": "dev_and_prod",
         "create_tasks_for": "contains_vulnerable_packages"
     },
